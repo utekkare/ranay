@@ -1,0 +1,54 @@
+---
+description: Edit Ranay's agent workspace files (SOUL, IDENTITY, AGENTS, TOOLS, HEARTBEAT, MEMORY, BOOT)
+alwaysApply: true
+---
+
+# Ranay Workspace Editor
+
+This Cursor workspace doubles as the control panel for **Ranay**, Pranay's OpenClaw AI agent. When Pranay asks to add, edit, or update instructions for Ranay, edit the files directly at `~/.openclaw/workspace/`.
+
+## File Map
+
+| File | Path | Purpose |
+|------|------|---------|
+| SOUL | `~/.openclaw/workspace/SOUL.md` | Core personality, ethics, communication style, decision framework, trust ladder |
+| IDENTITY | `~/.openclaw/workspace/IDENTITY.md` | Name, creature type, vibe, emoji, avatar, what Ranay does and doesn't do |
+| AGENTS | `~/.openclaw/workspace/AGENTS.md` | Session behavior, memory rules, safety, group chat etiquette, heartbeat logic |
+| TOOLS | `~/.openclaw/workspace/TOOLS.md` | Infrastructure notes, API keys, installed CLIs, URLs, environment-specific config |
+| HEARTBEAT | `~/.openclaw/workspace/HEARTBEAT.md` | Periodic check tasks, briefing schedule, quiet hours |
+| MEMORY | `~/.openclaw/workspace/MEMORY.md` | Long-term curated memories, decisions log, lessons learned, preferences |
+| BOOT | `~/.openclaw/workspace/BOOT.md` | Startup instructions run on gateway launch (create if missing) |
+
+Supporting files (also editable):
+- `~/.openclaw/workspace/USER.md` — info about Pranay (ventures, preferences, schedule)
+- `~/.openclaw/workspace/SOP.md` — standard operating procedures Ranay runs autonomously
+- `~/.openclaw/workspace/memory/` — daily memory files (`YYYY-MM-DD.md`)
+
+## Workflow
+
+1. **Always read the target file first** before making changes.
+2. **Append or merge** new instructions into the appropriate section; don't overwrite existing content unless asked.
+3. **Preserve frontmatter** if present (some files may have YAML frontmatter).
+4. **Match the existing tone** — Ranay's files are direct, concise, and practical.
+5. **Confirm changes** by showing what was added/changed.
+
+## What Goes Where
+
+- "Ranay should always..." / personality / ethics / communication style → **SOUL.md**
+- "Ranay's name/role/responsibilities..." → **IDENTITY.md**
+- "When Ranay starts a session..." / memory rules / safety → **AGENTS.md**
+- "Ranay has access to..." / API keys / SSH hosts / device names → **TOOLS.md**
+- "Check X every heartbeat..." / periodic tasks → **HEARTBEAT.md**
+- "Remember that..." / decisions / lessons → **MEMORY.md**
+- "On startup, do..." → **BOOT.md**
+- "When Pranay says X, do Y..." / repeatable tasks → **SOP.md**
+
+## Shorthand
+
+When Pranay says things like:
+- "add to SOUL" → edit `~/.openclaw/workspace/SOUL.md`
+- "update tools" → edit `~/.openclaw/workspace/TOOLS.md`
+- "new heartbeat task" → edit `~/.openclaw/workspace/HEARTBEAT.md`
+- "remember this" → edit `~/.openclaw/workspace/MEMORY.md`
+- "add a boot task" → edit `~/.openclaw/workspace/BOOT.md` (create if missing)
+- "new SOP" → edit `~/.openclaw/workspace/SOP.md`
